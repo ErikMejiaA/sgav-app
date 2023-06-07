@@ -1,0 +1,17 @@
+{
+    "name": "apolm01-032/sgav-app",
+    "description": "Sistema para la gestion y el alquiler de vivienda.",
+    "authors": [
+        {
+            "name": "ErikMejiaA",
+            "email": "131417967+ErikMejiaA@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload" : {
+        "psr-4" : {
+            "App\\" : "./config",
+            "Models\\" : "./models"
+        }
+    }
+}
