@@ -1,5 +1,4 @@
---BASE DE DATOS PARA SER IMPLEMENTADA EN MYSQL
---creamos la base de datos
+--BASE DE DATOS PARA SER IMPLEMENTADA EN POSTGRES
 CREATE DATABASE sgavapp;
 
 -- seleccionamos la base de datos
@@ -7,14 +6,14 @@ USE sgavapp;
 
 --creamos la tabla countries
 CREATE TABLE countries(
-    id_country INT NOT NULL AUTO_INCREMENT,
+    id_country INT NOT NULL SERIAL,
     name_country VARCHAR(50) NOT NULL UNIQUE,
     CONSTRAINT PK_Country PRIMARY KEY (id_country)
 );
 
 --creamos la tabla regions
 CREATE TABLE regions(
-    id_region INT NOT NULL AUTO_INCREMENT,
+    id_region INT NOT NULL SERIAL,
     name_region VARCHAR(50) NOT NULL UNIQUE,
     id_country INT(11),
     CONSTRAINT PK_Region PRIMARY KEY (id_region),
@@ -23,7 +22,7 @@ CREATE TABLE regions(
 
 --creamos la tabla cities
 CREATE TABLE cities(
-    id_city INT NOT NULL AUTO_INCREMENT,
+    id_city INT NOT NULL SERIAL,
     name_city VARCHAR(50) NOT NULL UNIQUE,
     id_region INT(11),
     CONSTRAINT PK_City PRIMARY KEY (id_city),
@@ -43,14 +42,14 @@ CREATE TABLE persons(
 
 --creamos la tabla housetype
 CREATE TABLE housetype(
-    id_housetype INT NOT NULL AUTO_INCREMENT,
+    id_housetype INT NOT NULL SERIAL,
     name_housetype VARCHAR(50) NOT NULL UNIQUE,
     CONSTRAINT PK_Housetype PRIMARY KEY (id_housetype)
 );
 
 --creamos la tabla living_place
 CREATE TABLE living_place(
-    id_living INT NOT NULL AUTO_INCREMENT,
+    id_living INT NOT NULL SERIAL,
     id_person VARCHAR(20),
     id_city INT(11),
     rooms_living INT NOT NULL,
@@ -67,4 +66,3 @@ CREATE TABLE living_place(
     CONSTRAINT FK_CitiesLiving FOREIGN KEY (id_city) REFERENCES cities(id_city),
     CONSTRAINT FK_HousetypeLiving FOREIGN KEY (id_housetype) REFERENCES housetype(id_housetype)
 );
-

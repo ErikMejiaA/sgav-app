@@ -1,4 +1,4 @@
-// seleccionamos el formulario de ciudades
+// seleccionamos el formulario de paises
 let formCountries = document.querySelector('#formCountries'); 
 //se escribe la cabezera para enviar los datos a php por fetch
 let myHeadersCountries = new Headers({"Content-Tipe" : "application/json"});
