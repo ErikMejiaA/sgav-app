@@ -6,12 +6,14 @@
     use Models\Countries;
     use Models\Regions;
     use Models\Cities;
+    use Models\Persons;
 
     $db = new Database();
     $conn = $db -> getConnection('mysql');
     Countries :: setConn($conn);
     Regions :: setConn($conn);
     Cities :: setConn($conn);
+    Persons :: setConn($conn);
     
     
 ?>

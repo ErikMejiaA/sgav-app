@@ -2,6 +2,8 @@
     require_once('app.php');
     use Models\Countries;
     use Models\Regions;
+    use Models\Cities;
+    use Models\Persons;
 
     $objCountries = new Countries();
     $datosCountries = $objCountries -> loadAllData();
@@ -18,6 +20,22 @@
     echo "<pre>";
     print_r($datosRegions);
     echo "</pre>";*/
+
+    $objCities = new Cities();
+    $datosCities = $objCities -> loadAllData();
+
+    /*echo "<br/>";
+    echo "<pre>";
+    print_r($datosCities);
+    echo "</pre>";*/
+
+    $objPersons = new Persons();
+    $datosPersons = $objPersons -> loadAllData();
+
+    /*echo "<br/>";
+    echo "<pre>";
+    print_r($datosPersons);
+    echo "</pre>";*/
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +51,7 @@
     <script src="controllers/countriesController.js" type="text/javascript" defer></script>
     <script src="controllers/regionsController.js" type="text/javascript" defer></script>
     <script src="controllers/citiesController.js" type="text/javascript" defer></script>
+    <script src="controllers/personsController.js" type="text/javascript" defer></script>
 
     <title>S-G-A-V App</title>
 </head>
@@ -172,6 +191,67 @@
                         </div>
                         <div class="container text-center">
                             <button type="submit" class="btn btn-success" id="btnCities">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Form de persons-->
+        <div class="container mt-3 text-center" id="persons">
+            <div class="card">
+                <h5 class="card-header text-center">REGISTRO DE LAS PERSONAS</h5>
+                <div class="card-body">
+                <form id="formPersons">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="id_person" class="form-label">Ingrese el ID de la persona:</label>
+                                        <input type="text" class="form-control" id="id_person" name="id_person">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="firstname_person" class="form-label">Ingrese el nombre:</label>
+                                        <input type="text" class="form-control" id="firstname_person" name="firstname_person">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="lastname_person" class="form-label">Ingrese el Apellido:</label>
+                                        <input type="text" class="form-control" id="lastname_person" name="lastname_person">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="birthdate_person" class="form-label">Ingrese la fecha de Cumpleaños:</label>
+                                        <input type="date" class="form-control" id="birthdate_person" name="birthdate_person">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+
+                                        <label for="id_city" class="form-label">Ciudad:</label>
+                                        <select class="form-select" name="id_city" id="id_city">
+                                            <option selected>Seleccione una Ciudad:</option>
+                                            <?php foreach ($datosCities as $itemCities) { ?>
+                                                <option value="<?php echo $itemCities['id_city'];?>"><?php echo $itemCities['name_city'];?></option>
+                                            <?php } ?>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-success" id="btnPersons">ENVIAR</button>
                         </div>
                     </form>
                 </div>
