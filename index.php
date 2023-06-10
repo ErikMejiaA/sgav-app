@@ -374,14 +374,14 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="mb-3">
-                                        <label for=" patio_living" class="form-label">Ingrese el numero de Patios:</label>
-                                        <input type="number" class="form-control" id=" patio_living" name=" patio_living" min="0">
+                                        <label for="patio_living" class="form-label">Ingrese el numero de Patios:</label>
+                                        <input type="number" class="form-control" id="patio_living" name="patio_living" min="0">
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="mb-3">
-                                        <label for=" pool_living" class="form-label">Ingrese el numero de Pisinas:</label>
-                                        <input type="number" class="form-control" id=" pool_living" name=" pool_living" min="0">
+                                        <label for="pool_living" class="form-label">Ingrese el numero de Pisinas:</label>
+                                        <input type="number" class="form-control" id="pool_living" name="pool_living" min="0">
                                     </div>
                                 </div>
                                 <div class="col-4">
@@ -394,7 +394,7 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div class="mb-3">
-                                        <label for=" image_living" class="form-label">Ingrese la foto:</label>
+                                        <label for="image_living" class="form-label">Ingrese la foto:</label>
                                         <input type="file" class="form-control" id="image_living" name="image_living">
                                     </div>
                                 </div>
