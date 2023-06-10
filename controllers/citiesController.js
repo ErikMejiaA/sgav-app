@@ -1,7 +1,7 @@
 //Seleccionamos el formularia de ciudades
 let formCities = document.querySelector('#formCities');
 //agregamos el encabezado para poder realizar el envio de datos a php
-let myHeadersCities = new Headers({"Content-Tipe" : "application/json"});
+let myHeadersCities = new Headers({"Content-Type" : "application/json"});
 
 //creamos el evento al boton para enviar los datos 
 document.querySelector('#btnCities').addEventListener('click', async (e) => {

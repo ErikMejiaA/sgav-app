@@ -1,7 +1,7 @@
 // seleccionamos el formularario de regiones 
 let formRegions = document.querySelector('#formRegions');
 //Escribimos el encabezado para enviar los datos a php por medio del fetch
-let myHeadersRegions = new Headers({"Content-Tipe" : "application/json"});
+let myHeadersRegions = new Headers({"Content-Type" : "application/json"});
 
 //creamos el evento al boton para enviar los datos
 document.querySelector('#btnRegions').addEventListener('click', async (e) => {

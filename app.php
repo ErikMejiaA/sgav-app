@@ -7,6 +7,8 @@
     use Models\Regions;
     use Models\Cities;
     use Models\Persons;
+    use Models\Housetype;
+    use Models\Living_place;
 
     $db = new Database();
     $conn = $db -> getConnection('mysql');
@@ -14,6 +16,8 @@
     Regions :: setConn($conn);
     Cities :: setConn($conn);
     Persons :: setConn($conn);
+    Housetype :: setConn($conn);
+    Living_place :: setConn($conn);
     
     
 ?>

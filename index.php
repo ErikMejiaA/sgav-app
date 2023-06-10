@@ -4,6 +4,8 @@
     use Models\Regions;
     use Models\Cities;
     use Models\Persons;
+    use Models\Housetype;
+    use Models\Living_place;
 
     $objCountries = new Countries();
     $datosCountries = $objCountries -> loadAllData();
@@ -36,6 +38,22 @@
     echo "<pre>";
     print_r($datosPersons);
     echo "</pre>";*/
+
+    $objHousetype = new Housetype();
+    $datosHousetype = $objHousetype -> loadAllData();
+
+    /*echo "<br/>";
+    echo "<pre>";
+    print_r($datosHousetype);
+    echo "</pre>";*/
+
+    $objLiving_place = new Living_place();
+    $datosLiving_place = $objLiving_place -> loadAllData();
+
+    /*echo "<br/>";
+    echo "<pre>";
+    print_r($datosLiving_place);
+    echo "</pre>";*/
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +70,9 @@
     <script src="controllers/regionsController.js" type="text/javascript" defer></script>
     <script src="controllers/citiesController.js" type="text/javascript" defer></script>
     <script src="controllers/personsController.js" type="text/javascript" defer></script>
+    <script src="controllers/housetypeContoller.js" type="text/javascript" defer></script>
+    <script src="controllers/living_placeController.js" type="text/javascript" defer></script>
+
 
     <title>S-G-A-V App</title>
 </head>
@@ -252,6 +273,151 @@
                         </div>
                         <div class="container text-center">
                             <button type="submit" class="btn btn-success" id="btnPersons">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Form de Housetype-->
+        <div class="container mt-3 text-center" id="housetype">
+            <div class="card">
+                <h5 class="card-header text-center">REGISTRO DE TIPO DE CASA</h5>
+                <div class="card-body">
+                <form id="formHousetype">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                   
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="name_housetype" class="form-label">Ingrese el nombre del tipo de casa:</label>
+                                        <input type="text" class="form-control" id="name_housetype" name="name_housetype">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-success" id="btnHousetype">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--Form de living_place-->
+        <div class="container mt-3 text-center" id="living_place">
+            <div class="card">
+                <h5 class="card-header text-center">REGISTRO DEL LUGAR PARA VIVIR</h5>
+                <div class="card-body">
+                <form id="formLiving_place">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+
+                                        <label for="id_person" class="form-label">Nombre y Apellido:</label>
+                                        <select class="form-select" name="id_person" id="id_person">
+                                            <option selected>Seleccione una Persona</option>
+                                            <?php foreach($datosPersons as $itemPersons) { ?>
+                                                <option value="<?php echo $itemPersons['id_person']; ?>"><?php echo $itemPersons['firstname_person'] .' '.$itemPersons['lastname_person']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+
+                                        <label for="id_city" class="form-label">Ciudad:</label>
+                                        <select class="form-select" name="id_city" id="id_city">
+                                            <option selected>Seleccione una Ciudad:</option>
+                                            <?php foreach ($datosCities as $itemCities) { ?>
+                                                <option value="<?php echo $itemCities['id_city'];?>"><?php echo $itemCities['name_city'];?></option>
+                                            <?php } ?>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="rooms_living" class="form-label">Ingrese el numero de Habitaciones:</label>
+                                        <input type="number" class="form-control" id="rooms_living" name="rooms_living" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="bathrooms_living" class="form-label">Ingrese el numero de Baños:</label>
+                                        <input type="number" class="form-control" id="bathrooms_living" name="bathrooms_living" min="0">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="kitchen_living" class="form-label">Ingrese el numero de Cocinas:</label>
+                                        <input type="number" class="form-control" id="kitchen_living" name="kitchen_living" min="0">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="tvroom_living" class="form-label">Ingrese el numero de TV:</label>
+                                        <input type="number" class="form-control" id="tvroom_living" name="tvroom_living" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for=" patio_living" class="form-label">Ingrese el numero de Patios:</label>
+                                        <input type="number" class="form-control" id=" patio_living" name=" patio_living" min="0">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for=" pool_living" class="form-label">Ingrese el numero de Pisinas:</label>
+                                        <input type="number" class="form-control" id=" pool_living" name=" pool_living" min="0">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="barbecue_living" class="form-label">Ingrese el numero de Parrillas:</label>
+                                        <input type="number" class="form-control" id="barbecue_living" name="barbecue_living" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for=" image_living" class="form-label">Ingrese la foto:</label>
+                                        <input type="file" class="form-control" id="image_living" name="image_living">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <label for="id_housetype" class="form-label">Tipo Casa:</label>
+                                        <select class="form-select" name="id_housetype" id="id_housetype">
+                                            <option selected>Seleccione un tipo de casa:</option>
+                                            <?php foreach ($datosHousetype as $itemHousetype) { ?>
+                                                <option value="<?php echo $itemHousetype['id_housetype'];?>"><?php echo $itemHousetype['name_housetype'];?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-success" id="btnLiving_place">ENVIAR</button>
                         </div>
                     </form>
                 </div>

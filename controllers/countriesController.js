@@ -1,7 +1,7 @@
 // seleccionamos el formulario de paises
 let formCountries = document.querySelector('#formCountries'); 
 //se escribe la cabezera para enviar los datos a php por fetch
-let myHeadersCountries = new Headers({"Content-Tipe" : "application/json"});
+let myHeadersCountries = new Headers({"Content-Type" : "application/json"});
 
 //creamos el evento al boton para enviar los datos 
 document.querySelector('#btnCountries').addEventListener('click', async (e) => {
