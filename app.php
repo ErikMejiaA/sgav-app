@@ -11,7 +11,8 @@
     use Models\Living_place;
 
     $db = new Database();
-    $conn = $db -> getConnection('mysql');
+    $conn = $db -> getConnection('mysql'); //conexion con mysql
+    //$conn = $db -> getConnection('pgsql');   // conexion con postgres
     Countries :: setConn($conn);
     Regions :: setConn($conn);
     Cities :: setConn($conn);
