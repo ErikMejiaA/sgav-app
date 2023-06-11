@@ -4,7 +4,8 @@
     class Database {
         private $conn;
 
-        protected static $settings = array(
+        protected static $settings = Array(
+
             'mysql' => Array(
                 'driver' => 'mysql',
                 'host' => 'localhost',
